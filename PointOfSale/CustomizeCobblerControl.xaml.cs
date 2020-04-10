@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * Author: K-State CIS 400 Faculty and William Raymann.
+ * Class: CustomizeCobblerControl.
+ * Purpose: To provide a UI for selecting the flavor of a Cobbler and specify
+ *          whether the Cobbler should be served with ice cream.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +24,9 @@ namespace ExamTwoQuestions.PointOfSale
     /// </summary>
     public partial class CustomizeCobblerControl : UserControl
     {
+        /// <summary>
+        /// Create a WPF control for customizing a Cobbler order.
+        /// </summary>
         public CustomizeCobblerControl()
         {
             InitializeComponent();

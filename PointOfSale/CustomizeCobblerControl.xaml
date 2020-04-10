@@ -1,4 +1,11 @@
-﻿<UserControl x:Class="ExamTwoQuestions.PointOfSale.CustomizeCobblerControl"
+﻿<!--
+    Author: K-State CIS 400 Faculty and William Raymann.
+    Class: CustomizeCobblerControl.
+    Purpose: To provide a UI for selecting the flavor of a Cobbler and specify
+             whether the Cobbler should be served with ice cream.
+    -->
+    
+<UserControl x:Class="ExamTwoQuestions.PointOfSale.CustomizeCobblerControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,6 +14,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock>Customize Cobbler</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock FontSize="35" Margin="20,0,0,0" Grid.Row="0" Grid.ColumnSpan="2">Customize Cobbler</TextBlock>
+
+        
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="15,5,5,5">
+            <StackPanel.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2"/>
+            </StackPanel.LayoutTransform>
+            <TextBlock FontSize="20" Margin="10,5,5,5" Grid.Column="0" Grid.Row="1">Cobbler Filling:</TextBlock>
+            <RadioButton IsChecked="{Binding Path=FruitIsPeach}" Name="PeachFlavor" Content="Peach"/>
+            <RadioButton IsChecked="{Binding Path=FruitIsCherry}" Name="CherryFlavor" Content="Cherry"/>
+            <RadioButton IsChecked="{Binding Path=FruitIsBlueberry}" Name="BlueBerryFlavor" Content="BlueBerry"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="15,5,5,5">
+            <StackPanel.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2"/>
+            </StackPanel.LayoutTransform>
+            <TextBlock FontSize="20" Margin="10,5,5,5">Add Ice Cream:</TextBlock>
+            <CheckBox Content="With Ice Cream" IsChecked="{Binding Path=WithIceCream}"/>
+        </StackPanel>
+        
     </Grid>
 </UserControl>
